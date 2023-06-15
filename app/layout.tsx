@@ -13,11 +13,7 @@ export const metadata = {
 }
 
 // 服务器组件 可以 async
-export default async function RootLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const session = await getServerSession(authOptions)
   return (
     <html lang='en'>
