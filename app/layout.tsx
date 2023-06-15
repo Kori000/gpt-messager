@@ -4,7 +4,7 @@ import { getServerSession } from 'next-auth'
 
 import SideBar from '@/components/SideBar'
 import '@/styles/globals.css'
-import { authOptions } from '@/pages/api/auth/[...nextauth]'
+import { authOptions } from '../pages/api/auth/[...nextauth]'
 import Login from '@/components/Login'
 
 export const metadata = {

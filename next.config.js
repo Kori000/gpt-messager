@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  alias: {
-    '@': path.resolve(__dirname)
-  },
   images: {
     domains: ['links.papareact.com']
   },
