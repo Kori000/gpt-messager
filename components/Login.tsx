@@ -26,7 +26,7 @@ const Login = () => {
 
       <button
         onClick={() => signOut()}
-        className=' font-bold text-3xl animate-pulse  '
+        className=' font-bold text-3xl animate-pulse mt-4 '
       >
         Sign Out
       </button>

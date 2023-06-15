@@ -14,4 +14,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Playground
 
-[vercel-gpt-messager](https://react-c3.vercel.app/)
+[ChatGPT-Messager-Vercel](https://gpt-messager.vercel.app/)
