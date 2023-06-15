@@ -1,9 +1,18 @@
 @tailwind base;
+@layer base {
+  /* 隐藏滚动条 */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
   .infoText {
-    @apply p-4 bg-gray-700/40 rounded-lg max-w-[300px];
+    @apply p-4 bg-gray-300/10 rounded-lg max-w-[300px];
+  }
+  .chatRow {
+    @apply flex items-center justify-start rounded-lg px-5 py-3 text-sm space-x-2 hover:bg-gray-400/10 cursor-pointer text-gray-300 duration-200 ease-out;
   }
 }

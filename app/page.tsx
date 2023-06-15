@@ -1,23 +1,23 @@
-import React from 'react';
+import React from 'react'
 import {
   BoltIcon,
   ExclamationCircleIcon,
   ExclamationTriangleIcon,
   SunIcon
-} from '@heroicons/react/24/outline';
+} from '@heroicons/react/24/outline'
 const HomePage = () => {
   return (
-    <div className='text-white flex flex-col justify-center items-center h-screen px-2 '>
+    <div className='text-gray-200/90 flex flex-col justify-center items-center h-screen px-2 '>
       <h1 className='text-5xl font-bold mb-20 '>ChatGPT</h1>
 
-      <div className='flex space-x-2 text-center '>
+      <div className='flex space-x-4 text-center '>
         <div>
           <div className='flex items-center justify-center flex-col mb-5  '>
             <SunIcon className='h-8 w-8 ' />
             <h2>Examples</h2>
           </div>
 
-          <div className='space-y-2 '>
+          <div className='space-y-4 '>
             <p className='infoText '>
               "Explain quantum computing in simple terms"
             </p>
@@ -36,7 +36,7 @@ const HomePage = () => {
             <h2>Capabilities</h2>
           </div>
 
-          <div className='space-y-2 '>
+          <div className='space-y-4 '>
             <p className='infoText '>
               Remembers what user said earlier in the conversation
             </p>
@@ -55,7 +55,7 @@ const HomePage = () => {
             <h2>Limitations</h2>
           </div>
 
-          <div className='space-y-2 '>
+          <div className='space-y-4 '>
             <p className='infoText '>
               May occasionally generate incorrect information
             </p>
@@ -69,7 +69,7 @@ const HomePage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
