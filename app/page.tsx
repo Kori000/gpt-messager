@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/24/outline'
 const HomePage = () => {
   return (
-    <div className='text-gray-200/90 flex flex-col justify-center items-center h-screen px-2 '>
+    <div className='flex flex-col justify-center items-center h-screen px-2 '>
       <h1 className='text-5xl font-bold mb-20 '>ChatGPT</h1>
 
       <div className='flex space-x-4 text-center '>

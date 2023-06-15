@@ -16,3 +16,20 @@
     @apply flex items-center justify-start rounded-lg px-5 py-3 text-sm space-x-2 hover:bg-gray-400/10 cursor-pointer text-gray-300 duration-200 ease-out;
   }
 }
+
+@layer components {
+  .dropdown-btn {
+    @apply hover:bg-[#3b4db8] hover:text-white  cursor-pointer rounded-sm px-2 py-[.375rem] outline-none;
+  }
+  .dropdown-btn-danger {
+    @apply hover:bg-[#d92f36] hover:text-white  cursor-pointer rounded-sm px-2 py-[.375rem] outline-none;
+  }
+  .dropdown-btn-sub {
+    @apply hover:bg-[#3b4db8] hover:text-white  cursor-pointer;
+  }
+}
+
+body {
+  background: theme('colors.slate.600');
+  color: theme('colors.gray.200');
+}

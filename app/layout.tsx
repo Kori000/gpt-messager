@@ -4,7 +4,8 @@ import { getServerSession } from 'next-auth'
 
 import SideBar from '@/components/SideBar'
 import '@/styles/globals.css'
-import { authOptions } from '@/pages/auth/[...nextAuth]'
+import { authOptions } from '@/pages/api/auth/[...nextauth]'
+import Login from '@/components/Login'
 
 export const metadata = {
   title: 'ChatGPT-Messager',
@@ -22,17 +23,21 @@ export default async function RootLayout({
     <html lang='en'>
       <body>
         <SessionProvider seesion={session}>
-          <div className='flex'>
-            {/* 侧边栏 */}
+          {!session ? (
+            <Login />
+          ) : (
+            <div className='flex'>
+              {/* 侧边栏 */}
 
-            <div className='bg-[#202123] max-w-xs h-screen overflow-auto md:min-w-[20rem]'>
-              <SideBar></SideBar>
+              <div className='bg-[#202123] max-w-xs h-screen overflow-auto md:min-w-[16rem]'>
+                <SideBar></SideBar>
+              </div>
+
+              {/* ClientProvider - 消息通知 */}
+
+              <div className='bg-[#343541] flex-1'>{children}</div>
             </div>
-
-            {/* ClientProvider - 消息通知 */}
-
-            <div className='bg-[#343541] flex-1'>{children}</div>
-          </div>
+          )}
         </SessionProvider>
       </body>
     </html>

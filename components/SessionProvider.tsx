@@ -11,7 +11,7 @@ type Props = {
 const SessionProvider = ({ children, seesion }: Props) => {
   return (
     <>
-      <Provider>{children}</Provider>
+      <Provider session={seesion}>{children}</Provider>
     </>
   )
 }
