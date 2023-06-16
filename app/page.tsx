@@ -18,15 +18,11 @@ const HomePage = () => {
           </div>
 
           <div className='space-y-4 '>
-            <p className='infoText '>
-              "Explain quantum computing in simple terms"
-            </p>
+            <p className='infoText '>"Explain quantum computing in simple terms"</p>
             <p className='infoText '>
               "Got any creative ideas for a 10 year old’s birthday?" 一
             </p>
-            <p className='infoText '>
-              "How do I make an HTTP request in Javascript?"
-            </p>
+            <p className='infoText '>"How do I make an HTTP request in Javascript?"</p>
           </div>
         </div>
 
@@ -40,12 +36,8 @@ const HomePage = () => {
             <p className='infoText '>
               Remembers what user said earlier in the conversation
             </p>
-            <p className='infoText '>
-              Allows user to provide follow-up corrections
-            </p>
-            <p className='infoText '>
-              Trained to decline inappropriate requests
-            </p>
+            <p className='infoText '>Allows user to provide follow-up corrections</p>
+            <p className='infoText '>Trained to decline inappropriate requests</p>
           </div>
         </div>
 
@@ -56,15 +48,11 @@ const HomePage = () => {
           </div>
 
           <div className='space-y-4 '>
-            <p className='infoText '>
-              May occasionally generate incorrect information
-            </p>
+            <p className='infoText '>May occasionally generate incorrect information</p>
             <p className='infoText '>
               May occasionally produce harmful instructions or biased content
             </p>
-            <p className='infoText '>
-              Limited knowledge of world and events after 2021
-            </p>
+            <p className='infoText '>Limited knowledge of world and events after 2021</p>
           </div>
         </div>
       </div>

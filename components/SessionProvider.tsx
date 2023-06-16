@@ -9,11 +9,7 @@ type Props = {
   seesion: Session | null
 }
 const SessionProvider = ({ children, seesion }: Props) => {
-  return (
-    <>
-      <Provider session={seesion}>{children}</Provider>
-    </>
-  )
+  return <Provider session={seesion}>{children}</Provider>
 }
 
 export default SessionProvider
