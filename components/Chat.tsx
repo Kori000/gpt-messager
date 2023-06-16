@@ -1,8 +1,8 @@
 import React from 'react'
 type Props = {
-  ChatId: string
+  chatId: string
 }
-const Chat = ({ ChatId }: Props) => {
+const Chat = ({ chatId }: Props) => {
   return <div className='flex-1 '>Chat</div>
 }
 

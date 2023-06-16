@@ -1,19 +1,61 @@
 'use client'
 
+import { db } from '@/firebase'
 import { PaperAirplaneIcon } from '@heroicons/react/24/solid'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { useSession } from 'next-auth/react'
 import React, { useState, useEffect } from 'react'
 type Props = {
-  ChatId: string
+  chatId: string
 }
-const ChatInput = ({ ChatId }: Props) => {
+const ChatInput = ({ chatId }: Props) => {
   const [prompt, setPrompt] = useState('213')
   const { data: session } = useSession()
+
+  // TODO: 通过 useSWR 获取 模型
+  const model = 'tetx-davinci-003'
+
+  async function sendMessage(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if (!prompt) return
+    const input = prompt.trim()
+    setPrompt('')
+
+    const message: Message = {
+      text: input,
+      createdAt: serverTimestamp(),
+      user: {
+        _id: session?.user?.email!,
+        name: session?.user?.name!,
+        avatar:
+          session?.user?.image ||
+          `https://ui-avatars.com/api/?background=random&color=fff&name=${session?.user?.name}`
+      }
+    }
+
+    await addDoc(
+      collection(db, 'users', session?.user?.email!, 'chats', chatId, 'messages'),
+      message
+    )
+
+    await fetch('/api/askQustion', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        prompt: input,
+        chatId,
+        model,
+        session
+      })
+    })
+  }
   return (
     <div className='bg-[#40414F] mx-4 text-gary-400 rounded-xl shadow-xs text-base border border-black/10'>
       <form
         className='p-5 space-x-5 flex'
-        action=''
+        onSubmit={sendMessage}
       >
         <input
           type='text'

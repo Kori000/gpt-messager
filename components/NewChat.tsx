@@ -14,7 +14,7 @@ function NewChat() {
     //   createAt: serverTimestamp()
     // })
     const doc = await addDoc(collection(db, 'users', session?.user?.email!, 'chats'), {
-      message: [],
+      messages: [],
       userId: session?.user?.email!,
       createdAt: serverTimestamp()
     })
