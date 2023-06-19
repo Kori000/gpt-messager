@@ -14,7 +14,7 @@ const ChatInput = ({ chatId }: Props) => {
   const { data: session } = useSession()
 
   // TODO: 通过 useSWR 获取 模型
-  const model = 'tetx-davinci-003'
+  const model = 'text-davinci-003'
 
   async function sendMessage(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()

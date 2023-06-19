@@ -18,7 +18,12 @@ const query = async (prompt: string, chatId: string, model: string) => {
       return res.data.choices[0].text
     })
     .catch(err => {
-      console.log('gpt err', err)
+      if (err.response) {
+        console.log(err.response.status)
+        console.log(err.response.data)
+      } else {
+        console.log(err.message)
+      }
       return `ChatGPT was unable to find an answer for that! Error: ${err.message}`
     })
 
