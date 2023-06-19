@@ -8,11 +8,6 @@ function NewChat() {
   const router = useRouter()
   const { data: session } = useSession()
   const createNewChat = async () => {
-    // addDoc(collection(数据库, 表, 文档名, 字段名, 文档名), {
-    //   message: [],
-    //   userId: session?.user?.email!,
-    //   createAt: serverTimestamp()
-    // })
     const doc = await addDoc(collection(db, 'users', session?.user?.email!, 'chats'), {
       messages: [],
       userId: session?.user?.email!,

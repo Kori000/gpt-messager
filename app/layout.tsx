@@ -6,6 +6,7 @@ import SideBar from '@/components/SideBar'
 import '@/styles/globals.css'
 import { authOptions } from '../pages/api/auth/[...nextauth]'
 import Login from '@/components/Login'
+import ClientProvider from '@/components/ClientProvider'
 
 export const metadata = {
   title: 'ChatGPT-Messager',
@@ -30,6 +31,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               </div>
 
               {/* ClientProvider - 消息通知 */}
+              <ClientProvider></ClientProvider>
 
               <div className='bg-[#343541] flex-1'>{children}</div>
             </div>

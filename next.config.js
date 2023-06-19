@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['links.papareact.com', 'ui-avatars.com']
+    domains: ['links.papareact.com', 'ui-avatars.com', 'api.openai.com']
   },
   experimental: {
     appDir: true

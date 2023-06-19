@@ -5,11 +5,12 @@ import { PaperAirplaneIcon } from '@heroicons/react/24/solid'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { useSession } from 'next-auth/react'
 import React, { useState, useEffect } from 'react'
+import { toast } from 'react-hot-toast'
 type Props = {
   chatId: string
 }
 const ChatInput = ({ chatId }: Props) => {
-  const [prompt, setPrompt] = useState('213')
+  const [prompt, setPrompt] = useState('')
   const { data: session } = useSession()
 
   // TODO: 通过 useSWR 获取 模型
@@ -38,7 +39,9 @@ const ChatInput = ({ chatId }: Props) => {
       message
     )
 
-    await fetch('/api/askQustion', {
+    const notification = toast.loading('ChatGPT is thinking...')
+
+    await fetch('/api/askQuestion', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -49,6 +52,8 @@ const ChatInput = ({ chatId }: Props) => {
         model,
         session
       })
+    }).then(() => {
+      toast.success('ChatGPT has responded!', { id: notification })
     })
   }
   return (
