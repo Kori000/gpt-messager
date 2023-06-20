@@ -1,4 +1,5 @@
 'use client'
+import useSWR from 'swr'
 
 import { db } from '@/firebase'
 import { PaperAirplaneIcon } from '@heroicons/react/24/solid'
@@ -6,6 +7,7 @@ import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { useSession } from 'next-auth/react'
 import React, { useState, useEffect } from 'react'
 import { toast } from 'react-hot-toast'
+import ModelSelection from './ModelSelection'
 type Props = {
   chatId: string
 }
@@ -14,7 +16,9 @@ const ChatInput = ({ chatId }: Props) => {
   const { data: session } = useSession()
 
   // TODO: 通过 useSWR 获取 模型
-  const model = 'text-davinci-003'
+  const { data: model } = useSWR('model', {
+    fallbackData: 'text-davinci-003'
+  })
 
   async function sendMessage(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -80,7 +84,10 @@ const ChatInput = ({ chatId }: Props) => {
         </button>
       </form>
 
-      <div>{/* ModalSelection */}</div>
+      {/* ModalSelection */}
+      <div className='sm:hidden '>
+        <ModelSelection></ModelSelection>
+      </div>
     </div>
   )
 }

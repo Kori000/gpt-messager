@@ -26,7 +26,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <div className='flex'>
               {/* 侧边栏 */}
 
-              <div className='bg-[#202123] max-w-xs h-screen overflow-auto md:min-w-[16rem]'>
+              <div className='bg-[#202123] max-w-xs h-screen overflow-auto  md:min-w-[16rem]'>
                 <SideBar></SideBar>
               </div>
 
