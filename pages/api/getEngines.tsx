@@ -3,7 +3,7 @@ import openai from '@/lib/chatgpt'
 
 type Option = {
   value: string
-  lable: string
+  label: string
 }
 
 type Data = {
@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
   const modelOptions = models.map(model => ({
     value: model.id,
-    lable: model.id
+    label: model.id
   }))
 
   res.status(200).json({ modelOptions })
